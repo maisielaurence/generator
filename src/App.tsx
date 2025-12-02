@@ -1,25 +1,17 @@
 import './App.css';
-import { Button, Typography, Box, ThemeProvider, createTheme, AppBar, Toolbar } from '@mui/material';
+import { Button, Typography, Box, AppBar, Toolbar } from '@mui/material';
 import { useState, useEffect } from 'react';
+// @ts-ignore
 import { quotes } from './constants';
 
 function App() {
-  const darkTheme = createTheme({
-    palette: {
-      mode: 'dark', //default theme
-      primary: {
-        main: '#ffffffff',
-      },
-      secondary: {
-        main: '#ffffffff',
-      },
-    },
-  })
+
   const [ currentQuote, setCurrentQuote ] = useState("")
   const [ author, setAuthor] = useState("")
 
   const getQuote = () => {
     const quoteIndex = Math.floor(Math.random() * quotes.length )
+    // @ts-ignore
     const newQuote = quotes.find(({ index }) => index === quoteIndex);
     return newQuote
   }
