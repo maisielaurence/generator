@@ -3,6 +3,7 @@ import { Button, Typography, Box, AppBar, Toolbar } from '@mui/material';
 import { useState, useEffect } from 'react';
 // @ts-ignore
 import { quotes } from './constants';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
     setAuthor(quote.author)
   }, []);
   return (
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
     <Box className="App">
       <AppBar enableColorOnDark sx={{backgroundColor: "#68B0AB", color: "#FAF3DD", display: "flex", alignItems: "center"}}>
         <Toolbar>
@@ -42,6 +44,7 @@ function App() {
         <Button onClick={generate} sx={{backgroundColor: "#68B0AB", color: "#FAF3DD", marginTop: "2rem", padding: "10px"}} size="large">Get a new quote!</Button>
         </Box>
     </Box>
+    </BrowserRouter>
   );
 }
 
