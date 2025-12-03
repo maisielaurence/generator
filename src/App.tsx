@@ -3,7 +3,7 @@ import { Button, Typography, Box, AppBar, Toolbar } from '@mui/material';
 import { useState, useEffect } from 'react';
 // @ts-ignore
 import { quotes } from './constants';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
